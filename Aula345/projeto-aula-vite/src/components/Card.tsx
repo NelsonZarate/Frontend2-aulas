@@ -1,24 +1,24 @@
-const cardStyle = {
-	width: "250px",
-	backgroundColor: "black",
-	color:"white",
-	borderRadius:"12px"
-};
-const titleStyle = {
-	color:"white",
-	fontSize:"24px",
-};
-
-const descriptionStyle = {
-	
+interface CardProps {
+  title: string;
+  description: string;
+  buttonName: string;
 }
 
-const Card = ({title , description, buttonName}: {title: string, description: string,buttonName:string}) => {
-	return <div style={cardStyle}>
-	<h2 style={titleStyle}> {title}</h2>
-	<div style={descriptionStyle}> {description}</div>
-	<button onClick={()=>{alert('you clicked me');}}> {buttonName}</button>
-	</div>
-};
+function Card({ title, description, buttonName }: CardProps) {
+  return (
+    <div className="bg-black text-white rounded-xl p-6 w-64 flex flex-col gap-4 shadow-lg">
+      <h2 className="text-xl font-semibold">{title}</h2>
 
-export default Card
+      <p className="text-gray-300 text-sm">{description}</p>
+
+      <button
+        onClick={() => alert("you clicked me")}
+        className="mt-auto bg-white text-black py-2 rounded hover:bg-gray-200 transition"
+      >
+        {buttonName}
+      </button>
+    </div>
+  );
+}
+
+export default Card;

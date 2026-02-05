@@ -92,5 +92,5 @@ strings.add('c');
 strings.remove('b');
 strings.getAll();
 
-console.log(numbers);
-console.log(strings)
+console.log(numbers.array);
+console.log(strings.array)
