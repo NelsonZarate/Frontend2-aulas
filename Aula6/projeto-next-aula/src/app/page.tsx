@@ -1,7 +1,10 @@
-export default async function Home() {
+import HomePage from "@/components/layout/HomePage";
+import { TemaProvider } from "@/components/layout/TemaContext";
+
+export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <h1> Home </h1>
-    </div>
+    <TemaProvider>
+      <HomePage />
+    </TemaProvider>
   );
 }
